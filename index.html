@@ -4,7 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MontGust - Restaurante en Mont-roig del Camp</title>
+
+<!-- Favicon moderno -->
 <link rel="icon" type="image/png" href="logo_montgust.png">
+<!-- Favicon para navegadores antiguos -->
+<link rel="shortcut icon" href="logo_montgust.ico" type="image/x-icon">
+<!-- Favicon para iOS / móviles -->
+<link rel="apple-touch-icon" sizes="180x180" href="logo_montgust.png">
+
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -70,7 +77,6 @@ nav a:hover, nav a.active { color: #b47c44; }
   color: #fff;
 }
 
-/* ANIMACIÓN */
 @keyframes aparecer { 
   from { opacity: 0; transform: translateY(30px); } 
   to { opacity: 1; transform: translateY(0); } 
@@ -237,12 +243,10 @@ footer { text-align: center; background-color: #fff; padding: 20px; font-size: 0
   </div>
 </section>
 
-<!-- TEXTO ARRIBA DEL CARRUSEL -->
 <section class="texto-carrusel">
   <h3>Descubre nuestros platos más deliciosos</h3>
 </section>
 
-<!-- CARRUSEL -->
 <section class="carrusel">
   <div class="slides" id="slides">
     <img src="plato1.jpg">
@@ -293,7 +297,6 @@ const slides = document.getElementById('slides');
 const total = slides.children.length;
 const puntos = document.getElementById('puntos');
 
-// Generar puntos dinámicamente
 for (let i = 0; i < total; i++) {
   const punto = document.createElement('span');
   punto.classList.add('punto');
@@ -304,7 +307,6 @@ for (let i = 0; i < total; i++) {
 const indicadores = document.querySelectorAll('.punto');
 let index = 0;
 
-// Cambiar slide automáticamente
 setInterval(() => {
   index = (index + 1) % total;
   slides.style.transform = `translateX(-${index * 100}%)`;
